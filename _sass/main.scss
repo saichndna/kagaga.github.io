@@ -2,7 +2,7 @@ $logo-width: 69vw;
 $logo-height: ($logo-width * 438 / 1080);
 
 $responsive-logo-width: 90vw;
-$logo-height: ($responsive-logo-width * 438 / 1080);
+$responsive-logo-height: ($responsive-logo-width * 438 / 1080);
 
 html {
   font-family: "Roboto Slab";
@@ -37,7 +37,7 @@ nav {
 #logo_div {
   @media screen and (max-width: 800px) {
     width: $responsive-logo-width;
-    height: $logo-height;
+    height: $responsive-logo-height;
   }
   margin: 5% auto;
   width: $logo-width;
