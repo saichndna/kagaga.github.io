@@ -1,17 +1,19 @@
 $logo-width: 69vw;
 $logo-height: ($logo-width * 438 / 1080);
+
+$responsive-logo-width: 90vw;
+$logo-height: ($responsive-logo-width * 438 / 1080);
+
 html {
   font-family: "Roboto Slab";
 }
 
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
-p{
-    text-align: center;
-
+p {
+  text-align: center;
 }
-
 
 nav {
   text-align: center;
@@ -21,12 +23,22 @@ nav {
     text-decoration: none;
     font-size: 2em;
   }
+  @media screen and (max-width: 800px) {
+    a {
+      display: block;
+      padding: 4px;
+    }
+  }
 }
 .current-tab {
   color: green;
 }
 
 #logo_div {
+  @media screen and (max-width: 800px) {
+    width: $responsive-logo-width;
+    height: $logo-height;
+  }
   margin: 5% auto;
   width: $logo-width;
   height: $logo-height;
