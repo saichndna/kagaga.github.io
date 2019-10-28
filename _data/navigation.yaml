@@ -1,6 +1,8 @@
 - name: Home
   link: /
-- name: About
-  link: /about.html
-- name: Join
-  link: /join.html
+- name: News
+  link: /news.html
+- name: Social
+  link: /social.html
+- name: Store
+  link: /store.html
