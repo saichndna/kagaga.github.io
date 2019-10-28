@@ -25,10 +25,6 @@ html {
   font-family: "Roboto Slab";
   text-align: center;
 }
-body{
-  height: 100vh;
-}
-
 
 nav {
   text-align: center;
@@ -43,6 +39,16 @@ nav {
       display: block;
       padding: 4px;
     }
+  }
+}
+
+p {
+  width: 50%;
+  margin:auto;
+}
+@media screen and (max-width: 800px) {
+  p {
+    width: 95%;
   }
 }
 .current-tab {
@@ -67,41 +73,54 @@ nav {
 #logo_main {
   width: 100%;
   height: auto;
-  position: absolute;
-  left: 0;
+  position: relative;
+  // left: 0;
 
   -webkit-mask-image: url("../images/kgg_logo_main.png");
   mask-image: url("../images/kgg_logo_main.png");
   -webkit-mask-size: 100%;
   mask-size: 100%;
 
-  background-image: url("../images/dokidoki.png");
+  background-image: url("../images/logo_splash.png");
 
-  -webkit-animation: orbit 20s ease infinite;
-  -z-animation: orbit 20s ease infinite;
-  -o-animation: orbit 20s ease infinite;
-  animation: orbit 20s ease infinite;
+  -webkit-animation: orbit 40s ease-in-out infinite;
+  -z-animation: orbit 40s ease-in-out infinite;
+  -o-animation: orbit 40s ease-in-out infinite;
+  animation: orbit 40s ease-in-out infinite;
 }
+
 
 @include keyframes(orbit) {
-  0% {
-    background-position: 50% 0%;
+  0%{
+    background-position: 50% 15%;
   }
-  25% {
+  12.5%{
+    background-position: 68% 32%;
+  }
+  25%{
     background-position: 100% 50%;
   }
-  50% {
-    background-position: 50% 100%;
+  37.5%{
+    background-position: 68% 68%;
   }
-  75% {
+  50%{
+    background-position: 50% 85%;
+  }
+  62.5%{
+    background-position: 32% 68%;
+  }
+  75%{
     background-position: 0% 50%;
   }
-  100% {
-    background-position: 50% 0%;
+  87.5%{
+    background-position: 32% 32%;
+  }
+  100%{
+    background-position: 50% 15%;
   }
 }
 
-#logo_background {
+#logo_extra {
   width: 100%;
   height: auto;
   position: absolute;
@@ -137,3 +156,13 @@ nav {
   width: 85vw;
   height: 110vw;
 }
+.fab {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  text-decoration: none;
+}
+.fab:hover {
+  opacity: 0.7;
+}
+

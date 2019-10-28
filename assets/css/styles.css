@@ -1,0 +1,65 @@
+html { font-family: "Roboto Slab"; text-align: center; }
+
+nav { text-align: center; }
+
+nav a { padding: 1.5em; text-decoration: none; font-size: 2em; }
+
+@media screen and (max-width: 800px) { nav a { display: block; padding: 4px; } }
+
+.current-tab { color: green; }
+
+#logo_div { margin: 5% auto; width: 69vw; height: 27.9833333333vw; position: relative; -webkit-user-select: none; /* Safari */ -moz-user-select: none; /* Firefox */ -ms-user-select: none; /* IE10+/Edge */ user-select: none; }
+
+@media screen and (max-width: 800px) { #logo_div { width: 90vw; height: 36.5vw; } }
+
+#logo_main { width: 100%; height: auto; position: absolute; left: 0; -webkit-mask-image: url("../images/kgg_logo_main.png"); mask-image: url("../images/kgg_logo_main.png"); -webkit-mask-size: 100%; mask-size: 100%; background-image: url("../images/dokidoki.png"); -webkit-animation: orbit 20s ease infinite; -z-animation: orbit 20s ease infinite; -o-animation: orbit 20s ease infinite; animation: orbit 20s ease infinite; }
+
+@-webkit-keyframes orbit { 0% { background-position: 50% 0%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 50% 100%; }
+  75% { background-position: 0% 50%; }
+  100% { background-position: 50% 0%; } }
+
+@-moz-keyframes orbit { 0% { background-position: 50% 0%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 50% 100%; }
+  75% { background-position: 0% 50%; }
+  100% { background-position: 50% 0%; } }
+
+@-ms-keyframes orbit { 0% { background-position: 50% 0%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 50% 100%; }
+  75% { background-position: 0% 50%; }
+  100% { background-position: 50% 0%; } }
+
+@keyframes orbit { 0% { background-position: 50% 0%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 50% 100%; }
+  75% { background-position: 0% 50%; }
+  100% { background-position: 50% 0%; } }
+
+#logo_background { width: 100%; height: auto; position: absolute; left: 0; -webkit-mask-image: url("../images/kgg_logo_extra_black.png"); mask-image: url("../images/kgg_logo_extra_black.png"); -webkit-mask-size: 100%; mask-size: 100%; background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3); background-size: 1800% 1800%; -webkit-animation: rainbow 18s ease infinite; -z-animation: rainbow 18s ease infinite; -o-animation: rainbow 18s ease infinite; animation: rainbow 18s ease infinite; }
+
+@-webkit-keyframes rainbow { 0% { background-position: 0% 82%; }
+  50% { background-position: 100% 19%; }
+  100% { background-position: 0% 82%; } }
+
+@-moz-keyframes rainbow { 0% { background-position: 0% 82%; }
+  50% { background-position: 100% 19%; }
+  100% { background-position: 0% 82%; } }
+
+@-ms-keyframes rainbow { 0% { background-position: 0% 82%; }
+  50% { background-position: 100% 19%; }
+  100% { background-position: 0% 82%; } }
+
+@keyframes rainbow { 0% { background-position: 0% 82%; }
+  50% { background-position: 100% 19%; }
+  100% { background-position: 0% 82%; } }
+
+.newsletter { width: 85vw; height: 110vw; }
+
+.fab { width: 32px; height: 32px; padding: 4px; text-decoration: none; }
+
+.fab:hover { opacity: 0.7; }
+
+/*# sourceMappingURL=styles.css.map */
