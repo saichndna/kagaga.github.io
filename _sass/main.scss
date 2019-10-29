@@ -26,12 +26,14 @@ html {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+}
 nav {
   text-align: center;
 
   a {
     padding: 1.5em;
-    text-decoration: none;
     font-size: 2em;
   }
   @media screen and (max-width: 800px) {
@@ -44,7 +46,7 @@ nav {
 
 p {
   width: 50%;
-  margin:auto;
+  margin: auto;
 }
 @media screen and (max-width: 800px) {
   p {
@@ -53,6 +55,29 @@ p {
 }
 .current-tab {
   color: green;
+}
+
+#logo-anchor {
+  position: absolute;
+  width: 0;
+  height: 1px;
+  top: 70vh;
+  left: 0;
+}
+
+#logo_static{
+  width: 0;
+  body.logo-not-top & {
+    width: $logo-width / 4;
+    height: $logo-height / 4;
+    @media screen and (max-width: 800px) {
+      width: $responsive-logo-width / 4;
+      height: $responsive-logo-height / 4;
+    }
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 }
 
 #logo_div {
@@ -89,33 +114,32 @@ p {
   animation: orbit 40s ease-in-out infinite;
 }
 
-
 @include keyframes(orbit) {
-  0%{
+  0% {
     background-position: 50% 15%;
   }
-  12.5%{
+  12.5% {
     background-position: 68% 32%;
   }
-  25%{
+  25% {
     background-position: 100% 50%;
   }
-  37.5%{
+  37.5% {
     background-position: 68% 68%;
   }
-  50%{
+  50% {
     background-position: 50% 85%;
   }
-  62.5%{
+  62.5% {
     background-position: 32% 68%;
   }
-  75%{
+  75% {
     background-position: 0% 50%;
   }
-  87.5%{
+  87.5% {
     background-position: 32% 32%;
   }
-  100%{
+  100% {
     background-position: 50% 15%;
   }
 }
@@ -152,7 +176,7 @@ p {
   }
 }
 
-.newsletter{
+.newsletter {
   width: 85vw;
   height: 110vw;
 }
@@ -160,9 +184,8 @@ p {
   width: 32px;
   height: 32px;
   padding: 4px;
-  text-decoration: none;
+  color: #e94b4b;
 }
 .fab:hover {
   opacity: 0.7;
 }
-
