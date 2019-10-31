@@ -31,9 +31,16 @@ a {
 }
 nav {
   text-align: center;
-
+  position:fixed;
+  z-index: 100;
+  right: 0;
+  left: 0;
+  top:0;
+  body.logo-not-top & {
+    text-align: right;
+  }
   a {
-    padding: 1.5em;
+    padding: 4%;
     font-size: 2em;
   }
   @media screen and (max-width: 800px) {
@@ -58,30 +65,14 @@ p {
 }
 
 #logo-anchor {
-  position: absolute;
   width: 0;
   height: 1px;
-  top: 70vh;
-  left: 0;
 }
 
-#logo_static{
-  width: 0;
-  body.logo-not-top & {
-    width: $logo-width / 4;
-    height: $logo-height / 4;
-    @media screen and (max-width: 800px) {
-      width: $responsive-logo-width / 4;
-      height: $responsive-logo-height / 4;
-    }
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-}
 
 #logo_div {
   margin: 5% auto;
+  margin-bottom: 0;
   width: $logo-width;
   height: $logo-height;
   @media screen and (max-width: 800px) {
@@ -94,7 +85,19 @@ p {
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none;
 }
-
+#inner_logo_div{
+    body.logo-not-top & {
+    width: $logo-width / 4;
+    height: $logo-height / 4;
+    @media screen and (max-width: 800px) {
+      width: $responsive-logo-width / 4;
+      height: $responsive-logo-height / 4;
+    }
+    position: fixed;
+    top: 8px;
+    left: 8px;
+  }
+}
 #logo_main {
   width: 100%;
   height: auto;
