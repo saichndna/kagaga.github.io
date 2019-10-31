@@ -1,35 +1,93 @@
+$logo-aspect: 438 / 1080;
+
 $logo-width: 69vw;
-$logo-height: ($logo-width * 438 / 1080);
+$logo-height: ($logo-width * $logo-aspect);
+
+$responsive-logo-width: 90vw;
+$responsive-logo-height: ($responsive-logo-width * $logo-aspect);
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
 html {
   font-family: "Roboto Slab";
+  text-align: center;
 }
 
-h1{
-    text-align: center;
+a {
+  text-decoration: none;
 }
-p{
-    text-align: center;
-
-}
-
-
 nav {
   text-align: center;
 
   a {
     padding: 1.5em;
-    text-decoration: none;
     font-size: 2em;
+  }
+  @media screen and (max-width: 800px) {
+    a {
+      display: block;
+      padding: 4px;
+    }
+  }
+}
+
+p {
+  width: 50%;
+  margin: auto;
+}
+@media screen and (max-width: 800px) {
+  p {
+    width: 95%;
   }
 }
 .current-tab {
   color: green;
 }
 
+#logo-anchor {
+  position: absolute;
+  width: 0;
+  height: 1px;
+  top: 70vh;
+  left: 0;
+}
+
+#logo_static{
+  width: 0;
+  body.logo-not-top & {
+    width: $logo-width / 4;
+    height: $logo-height / 4;
+    @media screen and (max-width: 800px) {
+      width: $responsive-logo-width / 4;
+      height: $responsive-logo-height / 4;
+    }
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
 #logo_div {
   margin: 5% auto;
   width: $logo-width;
   height: $logo-height;
+  @media screen and (max-width: 800px) {
+    width: $responsive-logo-width;
+    height: $responsive-logo-height;
+  }
   position: relative;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
@@ -40,102 +98,63 @@ nav {
 #logo_main {
   width: 100%;
   height: auto;
-  position: absolute;
+  position: relative;
+  // left: 0;
 
   -webkit-mask-image: url("../images/kgg_logo_main.png");
   mask-image: url("../images/kgg_logo_main.png");
   -webkit-mask-size: 100%;
   mask-size: 100%;
 
-  background-image: url("../images/dokidoki.png");
+  background-image: url("../images/logo_splash.png");
 
-  -webkit-animation: orbit 20s ease infinite;
-  -z-animation: orbit 20s ease infinite;
-  -o-animation: orbit 20s ease infinite;
-  animation: orbit 20s ease infinite;
+  -webkit-animation: orbit 40s ease-in-out infinite;
+  -z-animation: orbit 40s ease-in-out infinite;
+  -o-animation: orbit 40s ease-in-out infinite;
+  animation: orbit 40s ease-in-out infinite;
 }
 
-@-webkit-keyframes orbit {
+@include keyframes(orbit) {
   0% {
-    background-position: 50% 0%;
+    background-position: 50% 15%;
+  }
+  12.5% {
+    background-position: 68% 32%;
   }
   25% {
     background-position: 100% 50%;
   }
+  37.5% {
+    background-position: 68% 68%;
+  }
   50% {
-    background-position: 50% 100%;
+    background-position: 50% 85%;
+  }
+  62.5% {
+    background-position: 32% 68%;
   }
   75% {
     background-position: 0% 50%;
   }
+  87.5% {
+    background-position: 32% 32%;
+  }
   100% {
-    background-position: 50% 0%;
+    background-position: 50% 15%;
   }
 }
 
-@-moz-keyframes orbit {
-  0% {
-    background-position: 50% 0%;
-  }
-  25% {
-    background-position: 100% 50%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  75% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 50% 0%;
-  }
-}
-
-@-o-keyframes orbit {
-  0% {
-    background-position: 50% 0%;
-  }
-  25% {
-    background-position: 100% 50%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  75% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 50% 0%;
-  }
-}
-
-@keyframes orbit {
-  0% {
-    background-position: 50% 0%;
-  }
-  25% {
-    background-position: 100% 50%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  75% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 50% 0%;
-  }
-}
-
-#logo_background {
+#logo_extra {
   width: 100%;
   height: auto;
   position: absolute;
+  left: 0;
 
   -webkit-mask-image: url("../images/kgg_logo_extra_black.png");
   mask-image: url("../images/kgg_logo_extra_black.png");
   -webkit-mask-size: 100%;
   mask-size: 100%;
+
   background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
   background-size: 1800% 1800%;
 
@@ -145,7 +164,7 @@ nav {
   animation: rainbow 18s ease infinite;
 }
 
-@-webkit-keyframes rainbow {
+@include keyframes(rainbow) {
   0% {
     background-position: 0% 82%;
   }
@@ -156,36 +175,17 @@ nav {
     background-position: 0% 82%;
   }
 }
-@-moz-keyframes rainbow {
-  0% {
-    background-position: 0% 82%;
-  }
-  50% {
-    background-position: 100% 19%;
-  }
-  100% {
-    background-position: 0% 82%;
-  }
+
+.newsletter {
+  width: 85vw;
+  height: 110vw;
 }
-@-o-keyframes rainbow {
-  0% {
-    background-position: 0% 82%;
-  }
-  50% {
-    background-position: 100% 19%;
-  }
-  100% {
-    background-position: 0% 82%;
-  }
+.fab {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  color: #e94b4b;
 }
-@keyframes rainbow {
-  0% {
-    background-position: 0% 82%;
-  }
-  50% {
-    background-position: 100% 19%;
-  }
-  100% {
-    background-position: 0% 82%;
-  }
+.fab:hover {
+  opacity: 0.7;
 }
