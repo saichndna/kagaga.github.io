@@ -1,21 +1,24 @@
 ---
-layout: default
+layout: home
 title: Home
 ---
-<div id="logo_div">
-    <div id="inner_logo_div">
+<div class="fullpage">
+    {% include navigation.html %}
+
+    <div id="logo_div">
         <img src="assets/images/kgg_logo_background.png" id="logo_main">
         <img src="assets/images/kgg_logo_background.png" id="logo_extra">
     </div>
+    <div id="about_div">
+        <span>A </span>
+        <a href="" class="typewrite" data-period="2000"
+            data-type='[ "fraternity", "sorority", "crack house", "middle lounge", "brothel", "home" ]'>
+            <span class="wrap"></span>
+        </a>
+        <span> made by gamers, for gamers.</span>
+    </div>
 </div>
-<div id="logo-anchor"></div>
-<div id="about_div">
-    <h1>About</h1>
-    <p>
-        A Sorority made by gamers, for gamers.
-    </p>
 
-</div>
 <div id="join_div">
     <h1>Join</h1>
     <p>

@@ -25,28 +25,22 @@ html {
   font-family: "Roboto Slab";
   text-align: center;
 }
-
+.fullpage{
+  height: 100vh;
+}
 a {
   text-decoration: none;
 }
 nav {
+  margin: 8px;
   text-align: center;
-  position:fixed;
-  z-index: 100;
-  right: 0;
-  left: 0;
-  top:0;
-  body.logo-not-top & {
-    text-align: right;
-  }
   a {
-    padding: 4%;
+    padding: 8px;
     font-size: 2em;
   }
   @media screen and (max-width: 800px) {
     a {
       display: block;
-      padding: 4px;
     }
   }
 }
@@ -69,10 +63,8 @@ p {
   height: 1px;
 }
 
-
 #logo_div {
-  margin: 5% auto;
-  margin-bottom: 0;
+  margin: 3% auto;
   width: $logo-width;
   height: $logo-height;
   @media screen and (max-width: 800px) {
@@ -85,19 +77,7 @@ p {
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none;
 }
-#inner_logo_div{
-    body.logo-not-top & {
-    width: $logo-width / 4;
-    height: $logo-height / 4;
-    @media screen and (max-width: 800px) {
-      width: $responsive-logo-width / 4;
-      height: $responsive-logo-height / 4;
-    }
-    position: fixed;
-    top: 8px;
-    left: 8px;
-  }
-}
+
 #logo_main {
   width: 100%;
   height: auto;
@@ -191,4 +171,20 @@ p {
 }
 .fab:hover {
   opacity: 0.7;
+}
+ 
+#about_div{
+  font-size: 3em;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(31, 31, 31);
+  a{
+    color:rgb(219, 80, 80);
+    font-weight: 600;
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 1em;
+
+  }
 }
