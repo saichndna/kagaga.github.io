@@ -24,26 +24,41 @@ $responsive-logo-height: ($responsive-logo-width * $logo-aspect);
 html {
   font-family: "Roboto Slab";
   text-align: center;
+  margin:0;
+  padding:0;
+}
+body{
+  margin:0;
+  padding:0;
 }
 .fullpage{
   height: 100vh;
+  min-height: 100vh;
 }
 a {
   text-decoration: none;
 }
 nav {
-  margin: 8px;
+  padding-top:32px;
   text-align: center;
+  // width:70%;
   a {
-    padding: 8px;
+    padding: 8px 16px;
     font-size: 2em;
+    color: black;
+  }
+  .current-tab {
+    color: rgb(252, 95, 95);
   }
   @media screen and (max-width: 800px) {
+    padding-top: 0;
     a {
       display: block;
     }
   }
 }
+
+
 
 p {
   width: 50%;
@@ -54,24 +69,17 @@ p {
     width: 95%;
   }
 }
-.current-tab {
-  color: green;
-}
 
-#logo-anchor {
-  width: 0;
-  height: 1px;
-}
 
 #logo_div {
-  margin: 3% auto;
+  margin-bottom: 16px;
   width: $logo-width;
   height: $logo-height;
   @media screen and (max-width: 800px) {
     width: $responsive-logo-width;
     height: $responsive-logo-height;
   }
-  position: relative;
+  // position: relative;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
@@ -90,40 +98,42 @@ p {
   mask-size: 100%;
 
   background-image: url("../images/logo_splash.png");
+  background-size:150%;
 
-  -webkit-animation: orbit 40s ease-in-out infinite;
-  -z-animation: orbit 40s ease-in-out infinite;
-  -o-animation: orbit 40s ease-in-out infinite;
-  animation: orbit 40s ease-in-out infinite;
+  -webkit-animation: orbit 40s linear infinite;
+  -z-animation: orbit 40s linear infinite;
+  -o-animation: orbit 40s linear infinite;
+  animation: orbit 40s linear infinite;
 }
 
 @include keyframes(orbit) {
+
   0% {
-    background-position: 50% 15%;
+    background-position: 50% 0%;
   }
   12.5% {
-    background-position: 68% 32%;
+    background-position: 82% 18%;
   }
   25% {
     background-position: 100% 50%;
   }
   37.5% {
-    background-position: 68% 68%;
+    background-position: 82% 82%;
   }
   50% {
-    background-position: 50% 85%;
+    background-position: 50% 100%;
   }
   62.5% {
-    background-position: 32% 68%;
+    background-position: 18% 82%;
   }
   75% {
     background-position: 0% 50%;
   }
   87.5% {
-    background-position: 32% 32%;
+    background-position: 18% 18%;
   }
   100% {
-    background-position: 50% 15%;
+    background-position: 50% 0%;
   }
 }
 
@@ -159,10 +169,14 @@ p {
   }
 }
 
+
+//NEWS
 .newsletter {
   width: 85vw;
   height: 110vw;
 }
+
+//SOCIAL
 .fab {
   width: 32px;
   height: 32px;
@@ -174,17 +188,52 @@ p {
 }
  
 #about_div{
-  font-size: 3em;
+  width:95%;
+  height: 50%;
 
+  margin: 0;
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+
+  font-size: 3em;
+  @media screen and (max-width: 800px) {
+    font-size: 2.5em;
+  }
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(31, 31, 31);
   a{
     color:rgb(219, 80, 80);
     font-weight: 600;
   }
+}
 
-  @media screen and (max-width: 800px) {
-    font-size: 1em;
+.wrap{
+  -webkit-animation: blinkTextCursor 500ms steps(44) infinite normal;
+  -z-animation: blinkTextCursor 500ms steps(44) infinite normal;
+  -o-animation: blinkTextCursor 500ms steps(44) infinite normal;
+  animation: blinkTextCursor 500ms steps(44) infinite normal;
 
-  }
+  border-right: 0.06em solid #666
+}
+
+@keyframes blinkTextCursor{
+  from{border-right-color:#666;}
+  to{border-right-color: transparent;}
+}
+
+.vertical-align{
+  vertical-align: top;
+}
+
+.center-in-page{
+  margin: 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
