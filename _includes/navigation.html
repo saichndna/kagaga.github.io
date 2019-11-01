@@ -1,9 +1,10 @@
-<nav>
+<nav id="navBar">
     {% for item in site.data.navigation %}
-        <a href="{{ item.link }}"
-            {% if page.url == item.link %}
-                class="current-tab"
-            {% endif %}>
-            {{ item.name }}</a>
+    <a href="{{ item.link }}" {% if page.url == item.link %} class="current-tab" {% endif %}>
+        {{ item.name }}</a>
     {% endfor %}
+
+    <a href="javascript:void(0);" id="hamburger" class="icon">
+        <i class="fas fa-bars"></i>
+    </a>
 </nav>

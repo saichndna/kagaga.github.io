@@ -44,7 +44,21 @@ TextWriter.prototype.tick = function () {
 
 let changingNoun = document.getElementById("changing-noun")
 const nouns = ["fraternity", "sorority", "crack house", "middle lounge", "gambling ring", "home"]
+if(changingNoun!=null){
+  new TextWriter(changingNoun, nouns, 2000)
+}
 
-new TextWriter(changingNoun, nouns, 2000)
 
+const hamburger = document.getElementById("hamburger")
+const navBar = document.getElementById("navBar")
+
+
+hamburger.addEventListener("click", function () {
+  
+  if (navBar.classList.contains("mobile-nav-shown")) {
+    navBar.classList.remove("mobile-nav-shown")
+  } else {
+    navBar.classList.add("mobile-nav-shown")
+  }
+})
 
