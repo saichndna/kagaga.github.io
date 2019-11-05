@@ -62,3 +62,9 @@ hamburger.addEventListener("click", function () {
   }
 })
 
+
+function playSound(){
+  var a = new Audio('./assets/sounds/shut_up_bitch.mp3')
+  a.play()
+}
+
