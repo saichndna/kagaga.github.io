@@ -2,7 +2,7 @@
 
 $twitch-aspect: 9 / 16;
 $twitch-width: 80vw;
-$logo-height: ($twitch-width * $twitch-aspect);
+$twitch-height: ($twitch-width * $twitch-aspect);
 
 $responsive-twitch-width: 90vw;
 $responsive-twitch-height: ($responsive-twitch-width * $twitch-aspect);
