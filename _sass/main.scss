@@ -1,5 +1,13 @@
-$logo-aspect: 438 / 1080;
 
+
+$twitch-aspect: 9 / 16;
+$twitch-width: 80vw;
+$logo-height: ($twitch-width * $twitch-aspect);
+
+$responsive-twitch-width: 90vw;
+$responsive-twitch-height: ($responsive-twitch-width * $twitch-aspect);
+
+$logo-aspect: 438 / 1080;
 $logo-width: 69vw;
 $logo-height: ($logo-width * $logo-aspect);
 
@@ -106,6 +114,16 @@ p {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none;
+}
+
+.twitch_div{
+  margin-bottom: 16px;
+  width: $twitch-width;
+  height: $twitch-height;
+  @media screen and (max-width: 800px) {
+    width: $responsive-twitch-width;
+    height: $responsive-twitch-height;
+  }
 }
 
 #logo_main {
