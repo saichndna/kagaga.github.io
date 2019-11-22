@@ -7,7 +7,7 @@ title: Soundboard
     <h1>{{ person.name }}</h1>
         {% for sound in person.sounds %}
             <h4>{{ sound.title }} </h4>
-            {% capture sound_src %}./assets/sounds/{{person.name}}/{{ sound.title | replace: ' ', '_'}}.mp3{% endcapture %}
+            {% capture sound_src %}/assets/sounds/{{person.name}}/{{ sound.title | replace: ' ', '_'}}.mp3{% endcapture %}
             <span onclick="playSound('{{ sound_src }}')" class ="fas fa-play-circle fa-2x"></span>
         {% endfor %}
     {% endfor %}

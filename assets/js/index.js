@@ -68,7 +68,7 @@ function playSound(url) {
   if (prevAudio != null) {
     prevAudio.pause()
   }
-  var a = new Audio(url)
+  var a = new Audio("https://raw.githubusercontent.com/kagaga/kagaga.github.io/master"+url)
   a.play()
   prevAudio = a;
 }
