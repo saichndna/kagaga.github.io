@@ -43,7 +43,7 @@ TextWriter.prototype.tick = function () {
 };
 
 let changingNoun = document.getElementById("changing-noun")
-const nouns = ["fraternity", "sorority", "crack house", "middle lounge", "gambling ring", "home"]
+const nouns = ["fraternity", "sorority", "crack house", "middle lounge", "gay bar", "home"]
 if (changingNoun != null) {
   new TextWriter(changingNoun, nouns, 2000)
 }
