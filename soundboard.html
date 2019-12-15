@@ -2,13 +2,17 @@
 layout: default
 title: Soundboard
 ---
-<div>
+<div class="sound-grid">
     {% for person in site.data.sounds %}
-    <h1>{{ person.name }}</h1>
-        {% for sound in person.sounds %}
-            <h4>{{ sound.title }} </h4>
-            {% capture sound_src %}/assets/sounds/{{person.name}}/{{ sound.title | replace: ' ', '_'}}.mp3{% endcapture %}
-            <span onclick="playSound('{{ sound_src }}')" class ="fas fa-play-circle fa-2x"></span>
-        {% endfor %}
+        <div class="sound-column">
+            <h2>{{ person.name }}</h2>
+            {% for sound in person.sounds %}
+                {% capture sound_src %}/assets/sounds/{{person.name}}/{{ sound.title | replace: ' ', '_'}}.mp3{% endcapture %}
+                <div class="sound-item" onclick="playSound('{{ sound_src }}')">
+                    <h4 class="button-text">{{ sound.title }} </h4>
+                </div>
+
+            {% endfor %}
+        </div>
     {% endfor %}
 </div>

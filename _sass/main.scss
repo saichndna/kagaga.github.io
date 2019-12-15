@@ -45,12 +45,13 @@ h1{
 .fullpage {
   height: 100vh;
   min-height: 100vh;
+  position: relative;
 }
 a {
   text-decoration: none;
 }
 nav {
-  padding-top: 32px;
+  padding: 32px 0;
   text-align: center;
   position: relative;
   z-index: 100;
@@ -73,7 +74,7 @@ nav {
   }
 
   @media screen and (max-width: 800px) {
-    padding-top: 0;
+    padding-top: 32px;
     #hamburger {
       display: block;
     }
@@ -219,18 +220,11 @@ p {
 h4{
   margin-bottom:0;
 }
-.fab,.fa-play-circle {
-  width: 32px;
-  height: 32px;
-  padding: 4px;
+.fab {
   color: #e94b4b;
 }
-.fab:hover, .fa-play-circle:hover {
+.fab:hover{
   opacity: 0.7;
-}
-
-.fa-play-circle{
-  size: 2em;
 }
 
 #about_div {
@@ -291,3 +285,45 @@ h4{
   display: inline-block;
 }
   
+.sound-grid{
+  display:flex;
+  margin: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sound-column{
+  display:flex;
+  flex-direction: column;
+  border-right-style: dotted;
+  width: 6em;
+}
+
+.sound-column:first-child{
+  border-left-style: dotted;
+}
+
+.sound-item{
+  margin: 4px 4px;
+  padding:2px;
+  background-color: #e94b4b;
+  color: white;
+  height:5em;
+  border-radius: 24px;
+}
+
+.sound-item:hover{
+  opacity: 0.7;
+}
+h4{
+  margin:0;
+}
+.button-text{
+  
+  text-align: center;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
