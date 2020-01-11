@@ -3,16 +3,23 @@ layout: default
 title: Soundboard
 ---
 <div class="sound-grid">
-    {% for person in site.data.sounds %}
-        <div class="sound-column">
-            <h2>{{ person.name }}</h2>
-            {% for sound in person.sounds %}
-                {% capture sound_src %}/assets/sounds/{{person.name}}/{{ sound.title | replace: ' ', '_'}}.mp3{% endcapture %}
-                <div class="sound-item" onclick="playSound('{{ sound_src }}')">
-                    <h4 class="button-text">{{ sound.title }} </h4>
-                </div>
+    {% assign current_name = "" %}
+    {% for sound in site.static_files %}
+        {% if sound.path contains 'assets/sounds' %}
+            {% assign split_path = sound.path | split: '/' %}
 
-            {% endfor %}
-        </div>
+            {% if split_path[3] != current_name %}
+                {%if current_name != "" %}
+                    </div>
+                {% endif %}
+                <div class="sound-column">
+                {% assign current_name = split_path[3] %}
+                
+                <h2>{{current_name}}</h2>
+            {% endif %}
+            <div class="sound-item" onclick="playSound('{{ sound.path }}')">
+                <h4 class="button-text">{{ sound.basename | replace: "_", " "}} </h4>
+            </div>
+        {% endif %}
     {% endfor %}
 </div>

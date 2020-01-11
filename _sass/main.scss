@@ -295,12 +295,7 @@ h4{
 .sound-column{
   display:flex;
   flex-direction: column;
-  border-right-style: dotted;
   width: 6em;
-}
-
-.sound-column:first-child{
-  border-left-style: dotted;
 }
 
 .sound-item{

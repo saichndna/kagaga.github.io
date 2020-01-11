@@ -1,4 +1,3 @@
 # kgg
 kgg website
-## Please don't merge into master unless you KNOW WHAT you are doing
-# thx xoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxxo
+## to add sound clips, just add to assets/sounds/NAME/ with **underscores** where spaces should be for the clip title
