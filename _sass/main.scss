@@ -212,7 +212,7 @@ p {
 //NEWS
 .newsletter {
   width: 85vw;
-  height: 110vw;
+  height: 100vw;
 }
 
 //SOCIAL
@@ -321,4 +321,13 @@ h4{
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+#social-container{
+  display:flex;
+  justify-content: center;
+
+  a{
+    padding:8px;
+  }
 }
